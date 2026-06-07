@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Elegant Dark Color Overrides */
+  --color-primary: #ffffff;
+  --color-secondary: #8E8E93;
+  --color-on-surface: #E4E4E6;
+  --color-on-surface-variant: #8E8E93;
+  --color-bg-darkest: #0A0A0C;
+  --color-bg-panel: #141417;
+  --color-bg-btn-low: #1C1C1E;
+  --color-bg-btn-medium: #2C2C2E;
+  --color-bg-btn-high: #3A3A3C;
+  --color-bg-btn-highest: #48484A;
+  --color-glass-border: rgba(255, 255, 255, 0.05);
+  --color-outline: #8E8E93;
+  --color-ai-purple: #8E8E93;
+}
+
+/* Glassmorphism/Matte custom components */
+.glassmorphism {
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(20, 20, 23, 0.85); /* #141417 styled panel background */
+}
+
+/* Precise button types for Elegant Dark Theme */
+.btn-scientific {
+  background-color: #1C1C1E;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  color: #E4E4E6;
+  font-family: var(--font-mono);
+  font-size: 0.875rem; /* text-sm */
+  transition: background-color 0.15s ease, transform 0.1s ease;
+}
+.btn-scientific:hover {
+  background-color: #2C2C2E;
+}
+
+.btn-digit {
+  background-color: #2C2C2E;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.25rem; /* text-xl */
+  transition: background-color 0.15s ease, transform 0.1s ease;
+}
+.btn-digit:hover {
+  background-color: #3A3A3C;
+}
+
+.btn-action {
+  background-color: #3A3A3C;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 1.25rem; /* text-xl */
+  transition: background-color 0.15s ease, transform 0.1s ease;
+}
+.btn-action:hover {
+  background-color: #48484A;
+}
+
+.btn-equal {
+  background-color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #000000;
+  font-weight: 700;
+  font-size: 1.875rem; /* text-3xl */
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+  transition: background-color 0.15s ease, transform 0.1s ease;
+}
+.btn-equal:hover {
+  background-color: #D1D1D6;
+}
+
+.glow-cyan-text {
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+.equal-button-glow {
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.1));
+}
+
+.glow-line-cyan {
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.4));
+}
+
+.glow-line-secondary {
+  filter: drop-shadow(0 0 4px rgba(142, 142, 147, 0.4));
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+.soft-press:active {
+  transform: scale(0.96);
+}
+
+/* scanline effect rendering */
+.scanline-effect {
+  position: relative;
+}
+
+.scanline-effect::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent 0%, rgba(255, 255, 255, 0.015) 50%, transparent 100%);
+  animation: scanline 8s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+/* General overrides */
+body {
+  background-color: #0A0A0C;
+  color: #E4E4E6;
+}
